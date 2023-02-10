@@ -1,10 +1,12 @@
+package vehicle;
+
 import Vehicle.Vehicle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import Vehicle.Car;
 import Vehicle.Ship;
 import Vehicle.MotorCycle;
-
+import Vehicle.GearBoxType;
 public class VehicleTest {
 
     @Test
@@ -59,5 +61,14 @@ public class VehicleTest {
         Assertions.assertTrue(rexMovingStatus);
 
 
+    }
+
+    @Test
+    void Should_Print_GearBox_Types() {
+
+        Car fiat = new Car("Fiat", 25, GearBoxType.AUTOMATIC);
+
+        String toString = fiat.toString();
+        System.out.println(toString);
     }
 }

@@ -6,6 +6,11 @@ public abstract class Vehicle {
     public boolean onOffState;
     public boolean safetyState;
 
+
+    protected final void protectedMethod(){
+        System.out.println("This method is protected");
+    }
+
     public void doorsAreOpen(){
         doorsState = true;
     }

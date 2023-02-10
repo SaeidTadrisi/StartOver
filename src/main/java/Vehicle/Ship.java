@@ -1,16 +1,25 @@
 package Vehicle;
 
+import java.util.Objects;
+
+import static java.lang.System.*;
+
 public class Ship extends Vehicle implements GearBox, TrunkValue{
 
     String brand;
     int trunkSize;
-    String gearBoxType;
+    GearBoxType gearBoxType;
+
+//    @Override
+//    protected void protectedMethod(){
+//        System.out.println("We are in Ship Class");
+//    }
 
     public Ship (String brand){
         this.brand = brand;
     }
 
-    public Ship(String brand, int trunkSize, String gearBoxType) {
+    public Ship(String brand, int trunkSize, GearBoxType gearBoxType) {
         this.brand = brand;
         this.trunkSize = trunkSize;
         this.gearBoxType = gearBoxType;
@@ -18,6 +27,7 @@ public class Ship extends Vehicle implements GearBox, TrunkValue{
 
     @Override
     public boolean movingState() {
+        protectedMethod();
         if ( onOffState && safetyState ){
             return true;
         }else
@@ -31,12 +41,21 @@ public class Ship extends Vehicle implements GearBox, TrunkValue{
 
 
     @Override
-    public String TypeOfGearBox() {
+    public GearBoxType TypeOfGearBox() {
         return gearBoxType;
     }
 
     @Override
     public int SizeOfTrunk() {
         return trunkSize;
+    }
+
+
+    public void printReference() {
+        out.println(this);
+    }
+
+    public void printReferencesObject (Object object){
+        out.println(object);
     }
 }

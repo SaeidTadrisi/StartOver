@@ -4,13 +4,13 @@ public class MotorCycle extends Vehicle implements GearBox , TrunkValue{
 
     String brand;
     int trunkSize;
-    String gearBoxType;
+    GearBoxType gearBoxType;
 
     public MotorCycle (String brand){
         this.brand = brand;
     }
 
-    public MotorCycle(String brand, int trunkSize, String gearBoxType) {
+    public MotorCycle(String brand, int trunkSize, GearBoxType gearBoxType) {
         this.brand = brand;
         this.trunkSize = trunkSize;
         this.gearBoxType = gearBoxType;
@@ -30,7 +30,7 @@ public class MotorCycle extends Vehicle implements GearBox , TrunkValue{
     }
 
     @Override
-    public String TypeOfGearBox() {
+    public GearBoxType TypeOfGearBox() {
         return gearBoxType;
     }
 
